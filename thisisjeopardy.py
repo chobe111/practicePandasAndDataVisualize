@@ -33,11 +33,11 @@ def strin(num):
         if c == ',':
             num = num[:i] + "" + num[i + 1:]
 
-    return num
+    return float(num)
 
 
 # a = jeopardy_data[" Value"].apply(lambda x: strin(x))
 #
-# b = jeopardy_data[" Value"].unique()
+b = jeopardy_data[" Value"].unique()
 
-# print(b)
+print(b)
