@@ -4,10 +4,6 @@ jeopardy_data = pd.read_csv('./jeopardy_starting/jeopardy.csv')
 
 pd.set_option('display.max_colwidth', len(jeopardy_data.columns))
 
-print(jeopardy_data.head(20))
-
-print("columns = ", jeopardy_data.columns)
-
 word_list = [" King ", " England "]
 
 
@@ -23,10 +19,11 @@ def string_to_float(string):
 
 
 new_df = jeopardy_data[jeopardy_data[" Question"].apply(lambda x: is_word_in_sentence(x, word_list))]
-print(len(new_df))
 
 
 def strin(num):
+    if num == "one":
+        print("what?")
     num = num[1:]
 
     for i, c in enumerate(num):
@@ -36,8 +33,9 @@ def strin(num):
     return float(num)
 
 
-# a = jeopardy_data[" Value"].apply(lambda x: strin(x))
+a = jeopardy_data[" Value"].apply(lambda x: strin(x))
 #
-b = jeopardy_data[" Value"].unique()
+a = jeopardy_data[" Value"]
+print(a)
 
-print(b)
+# print(b)
