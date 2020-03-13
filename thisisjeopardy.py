@@ -18,16 +18,26 @@ def is_word_in_sentence(sentence, lst):
     return True
 
 
-# def string_to_float(string):
-#
-#     return string.sub_string(1,len(string))
-#
-# new_df = jeopardy_data[jeopardy_data[" Question"].apply(lambda x: is_word_in_sentence(x, word_list))]
-# print(len(new_df))
-#
-def string_to_float(str):
-
-    pass
+def string_to_float(string):
+    return string.sub_string(1, len(string))
 
 
-jeopardy_data[" Value"] = jeopardy_data[" Value"].apply(lambda x: string_to_float(x))
+new_df = jeopardy_data[jeopardy_data[" Question"].apply(lambda x: is_word_in_sentence(x, word_list))]
+print(len(new_df))
+
+
+def strin(num):
+    num = num[1:]
+
+    for i, c in enumerate(num):
+        if c == ',':
+            num = num[:i] + "" + num[i + 1:]
+
+    return num
+
+
+# a = jeopardy_data[" Value"].apply(lambda x: strin(x))
+#
+# b = jeopardy_data[" Value"].unique()
+
+# print(b)
